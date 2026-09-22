@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="300" viewBox="0 0 1500 300" role="img" aria-labelledby="title desc">
+  <title id="title">Hello World 小黄鸭横幅</title>
+  <desc id="desc">蓝天白云下，一只高兴的小黄鸭在水中游泳，中间写着 Hello World!</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#43b9ff"/>
+      <stop offset="1" stop-color="#bdeeff"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22b9e8"/>
+      <stop offset="1" stop-color="#087ac7"/>
+    </linearGradient>
+    <linearGradient id="duckYellow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff36a"/>
+      <stop offset="1" stop-color="#ffc928"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#075f96" flood-opacity=".28"/>
+    </filter>
+    <filter id="textShadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="5" stdDeviation="2" flood-color="#075686" flood-opacity=".38"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1500" height="205" fill="url(#sky)"/>
+  <circle cx="1360" cy="52" r="34" fill="#fff6a8" opacity=".95"/>
+  <circle cx="1360" cy="52" r="47" fill="none" stroke="#fffbd7" stroke-width="7" opacity=".3"/>
+
+  <!-- Drifting clouds -->
+  <g fill="#fff" opacity=".94">
+    <g transform="translate(85 50)">
+      <animateTransform attributeName="transform" type="translate" values="85 50;260 50;85 50" dur="18s" repeatCount="indefinite"/>
+      <ellipse cx="76" cy="35" rx="72" ry="24"/>
+      <circle cx="48" cy="25" r="28"/>
+      <circle cx="84" cy="17" r="37"/>
+      <circle cx="118" cy="29" r="25"/>
+    </g>
+    <g transform="translate(505 26) scale(.72)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;145 0;0 0" dur="22s" repeatCount="indefinite" additive="sum"/>
+      <ellipse cx="76" cy="35" rx="72" ry="24"/>
+      <circle cx="48" cy="25" r="28"/>
+      <circle cx="84" cy="17" r="37"/>
+      <circle cx="118" cy="29" r="25"/>
+    </g>
+    <g transform="translate(1045 67) scale(.82)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;150 0;0 0" dur="20s" repeatCount="indefinite" additive="sum"/>
+      <ellipse cx="76" cy="35" rx="72" ry="24"/>
+      <circle cx="48" cy="25" r="28"/>
+      <circle cx="84" cy="17" r="37"/>
+      <circle cx="118" cy="29" r="25"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".48">
+    <path d="M275 48h36"/>
+    <path d="M294 63h54"/>
+    <path d="M938 52h43"/>
+    <path d="M966 67h55"/>
+  </g>
+
+  <!-- Water -->
+  <path d="M0 184 Q60 166 120 184 T240 184 T360 184 T480 184 T600 184 T720 184 T840 184 T960 184 T1080 184 T1200 184 T1320 184 T1440 184 T1560 184 V300 H0Z" fill="url(#water)"/>
+  <g fill="none" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="translate" values="0 0;28 0;0 0" dur="4s" repeatCount="indefinite"/>
+    <path d="M18 219 Q64 204 110 219 T202 219 M1165 228 Q1210 214 1255 228 T1345 228 M1360 200 Q1400 187 1440 200" stroke="#8eeaff" stroke-width="7" opacity=".7"/>
+    <path d="M47 268 Q95 253 143 268 T239 268 M1000 275 Q1053 258 1106 275 T1212 275 M1300 258 Q1350 243 1400 258 T1500 258" stroke="#52d4ef" stroke-width="6" opacity=".62"/>
+    <path d="M345 238 Q380 226 415 238 M860 245 Q900 231 940 245" stroke="#c8f8ff" stroke-width="5" opacity=".55"/>
+  </g>
+
+  <!-- Duck and wake -->
+  <g id="duck" transform="translate(225 120)" filter="url(#softShadow)">
+    <animateTransform attributeName="transform" type="translate" values="225 120;245 113;265 120;245 127;225 120" dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-1 12 66;1.5 12 66;-1 12 66" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    <path d="M-140 140 Q-103 129-65 140 M-150 153 Q-116 145-86 151" fill="none" stroke="#baf7ff" stroke-width="8" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" values="12 7;28 10;12 7" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".45;1;.45" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <g id="duck-shape" transform="scale(-1 1)">
+    <!-- Rounded sticker-style body inspired by the reference duck -->
+    <path id="duck-outline" d="M-64 81 C-80 94-84 112-71 128 C-55 148-18 153 23 149 C75 147 104 131 108 99 C111 75 104 50 91 53 C82 53 77 67 65 72 C51 79 37 78 22 82 C37 70 43 53 40 34 C37 14 21-3-4-7 Q4-22-9-22 Q-25-24-34-10 C-65-11-88 16-85 45 C-84 61-76 74-64 81Z" fill="#ffd92f" stroke="#fff" stroke-width="20" stroke-linejoin="round"/>
+    <path d="M-64 81 C-80 94-84 112-71 128 C-55 148-18 153 23 149 C75 147 104 131 108 99 C111 75 104 50 91 53 C82 53 77 67 65 72 C51 79 37 78 22 82 C37 70 43 53 40 34 C37 14 21-3-4-7 Q4-22-9-22 Q-25-24-34-10 C-65-11-88 16-85 45 C-84 61-76 74-64 81Z" fill="#ffd92f" stroke="#17120e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Flat cartoon bill with the same ink outline as the body -->
+    <g id="duck-bill" transform="translate(35 -8)">
+    <path d="M-73 43 C-79 46-80 53-89 56 C-96 59-103 58-107 61 C-112 64-108 69-101 73 C-90 80-71 83-59 77 C-54 75-56 71-60 68 C-66 62-67 54-69 47 Q-70 42-73 43Z" fill="#ff982e" stroke="#17120e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-100 65 Q-83 72-66 71" fill="none" stroke="#17120e" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Face, blush and animated blink -->
+    <ellipse cx="-61" cy="29" rx="7" ry="10" fill="#17120e">
+      <animate attributeName="ry" values="10;10;1;10;10" keyTimes="0;.42;.48;.54;1" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="-10" cy="36" rx="8" ry="11" fill="#17120e">
+      <animate attributeName="ry" values="11;11;1;11;11" keyTimes="0;.42;.48;.54;1" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="12" cy="57" r="16" fill="#ff91a0" opacity=".82"/>
+
+    <!-- Simple curved wing -->
+    <path d="M0 109 C2 134 30 137 51 122 C61 115 69 102 64 98 C59 93 44 100 31 98" fill="none" stroke="#17120e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Center greeting -->
+  <g text-anchor="middle" filter="url(#textShadow)">
+    <animate attributeName="opacity" values=".88;1;.88" dur="3s" repeatCount="indefinite"/>
+    <text x="770" y="164" font-family="'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif" font-size="82" font-weight="900" letter-spacing="1" fill="#fff">Hello World!</text>
+    <path d="M555 181 Q770 201 985 181" fill="none" stroke="#fff5a6" stroke-width="7" stroke-linecap="round" opacity=".92" stroke-dasharray="430" stroke-dashoffset="430">
+      <animate attributeName="stroke-dashoffset" values="430;0;0;430" keyTimes="0;.25;.78;1" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Small water accents -->
+  <g fill="#d7fbff" opacity=".9">
+    <animateTransform attributeName="transform" type="translate" values="0 2;0 -7;0 2" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".35;.95;.35" dur="2.8s" repeatCount="indefinite"/>
+    <circle cx="370" cy="202" r="5"/><circle cx="389" cy="188" r="3"/><circle cx="408" cy="200" r="4"/>
+    <circle cx="1110" cy="204" r="4"/><circle cx="1130" cy="190" r="3"/>
+  </g>
+</svg>
